@@ -19,20 +19,33 @@ augment /ncs:services {
 		tailf:info "Service Instance Name";
 		type string;
 	}
-	leaf device {
+	list device {
+
+		key name;
+		leaf name{
 		tailf:info "Router name";
 		mandatory true;
-		type leafref {
-			path "/ncs:devices/ncs:device/ncs:name";
-		}
-	}
+		type string;
+}	
+	list loopback
+{
+	
+	key name;
+	leaf name{
+	tailf:info "Service Instance Name";
+	type string;
+
+}
+
+
+
 	leaf loopback-intf {
 		tailf:info "Loopback Interface Number from 1100 to 1199";
 		mandatory true;
 		type uint32 {
 			range "1100..1199";
 		}
-	}
+}
 	leaf ip-address {
 		tailf:info "Valid IP range from 10.100.x.x to 10.199.x.x.";
 		mandatory true;
@@ -41,5 +54,8 @@ augment /ncs:services {
 		}
 	}
   }
+}
+}
  }
+
 }

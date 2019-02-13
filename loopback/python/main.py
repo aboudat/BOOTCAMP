@@ -1,4 +1,4 @@
-# -*- mode: python; python-indent: 4 -*-
+i# -*- mode: python; python-indent: 4 -*-
 import ncs
 from ncs.application import Service
 
@@ -15,14 +15,13 @@ class ServiceCallbacks(Service):
         self.log.info('Service create(service=', service._path, ')')
         device = service.device
         ip_address = service.ip_address
-        root.devices.device['c0'].config.ios_interface.Loopback['1172']
+        
+
+	root.devices.device['c0'].config.ios_interface.Loopback['1172']
         root.devices.device['c1'].config.cisco-ios-xr_interface.Loopback['168']
 
 
-        vars = ncs.template.Variables()
-        vars.add('DUMMY', '127.0.0.1')
-        template = ncs.template.Template(service)
-        template.apply('loopback-template', vars)
+
 
     # The pre_modification() and post_modification() callbacks are optional,
     # and are invoked outside FASTMAP. pre_modification() is invoked before
