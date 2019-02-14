@@ -1,4 +1,4 @@
-i# -*- mode: python; python-indent: 4 -*-
+# -*- mode: python; python-indent: 4 -*-
 import ncs
 from ncs.application import Service
 
@@ -13,12 +13,27 @@ class ServiceCallbacks(Service):
     @Service.create
     def cb_create(self, tctx, root, service, proplist):
         self.log.info('Service create(service=', service._path, ')')
-        device = service.device
-        ip_address = service.ip_address
-        
 
-	root.devices.device['c0'].config.ios_interface.Loopback['1172']
-        root.devices.device['c1'].config.cisco-ios-xr_interface.Loopback['168']
+        device = root.devices.device[service.device]
+        device_type =list( device.module)[0].name
+                
+        if device_type ='tailf-ned-cisco-ios':
+           
+            root.devices.device[service.device].config.ios_interface.Loopback[]
+           
+            root.devices.device[service.device].config.ios_interface.Loopback.create(service.loopback_intf)
+           
+            root.devices.device[service.device].config.ios_interface.Loopback[service.loopback_intf].ip.address.primary.address 
+      
+      
+      elif device_type ='tailf-ned-cisco-ios-xr':
+           
+            root.devices.device[service.device].config.cisco-ios-xr_interface.Loopback[]
+            
+            root.devices.device[service.device].config.cisco-ios-xr_interface.Loopback.create(service.loopback_intf)
+            
+            root.devices.device[service.device].config.cisco-ios-xr_interface.Loopback[service.loopback_intf].ip.address.primary.address
+
 
 
 
