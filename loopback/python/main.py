@@ -16,23 +16,21 @@ class ServiceCallbacks(Service):
 
         device = root.devices.device[service.device]
         device_type =list( device.module)[0].name
+
+        for interface in service.loopback_intf:
+            
+            
+            if device_type == 'tailf-ned-cisco-ios':
                 
-        if device_type ='tailf-ned-cisco-ios':
-           
-            root.devices.device[service.device].config.ios_interface.Loopback[]
-           
-            root.devices.device[service.device].config.ios_interface.Loopback.create(service.loopback_intf)
-           
-            root.devices.device[service.device].config.ios_interface.Loopback[service.loopback_intf].ip.address.primary.address 
-      
-      
-      elif device_type ='tailf-ned-cisco-ios-xr':
-           
-            root.devices.device[service.device].config.cisco-ios-xr_interface.Loopback[]
-            
-            root.devices.device[service.device].config.cisco-ios-xr_interface.Loopback.create(service.loopback_intf)
-            
-            root.devices.device[service.device].config.cisco-ios-xr_interface.Loopback[service.loopback_intf].ip.address.primary.address
+                root.devices.device[service.device].config["ios:interface"].Loopback.create(interface.loopback_intf)
+                root.devices.device[service.device].config["ios:interface"].Loopback[interface.loopback_intf].ip.address.primary.address = interface.ip_address 
+                root.devices.device[service.device].config["ios:interface"].Loopback[interface.loopback_intf].ip.address.primary.mask = "255.255.255.255" 
+
+            elif device_type == 'tailf-ned-cisco-ios-xr':
+                
+                root.devices.device[service.device].config["cisco-ios-xr:interface"].Loopback.create(service.loopback_intf)
+                root.devices.device[service.device].config["cisco-ios-xr:interface"].Loopback[service.loopback_intf].ipv4.address.ip = interface.ip_address
+                root.devices.device[service.device].config["cisco-ios-xr:interface"].Loopback[interface.loopback_intf].ipv4.address.mask = "255.255.255.255"
 
 
 
