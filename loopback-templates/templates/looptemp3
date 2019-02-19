@@ -1,0 +1,68 @@
+Evaluating "/device" (from file "loopback-template.xml", line 10)
+Context node: /services/loopback:loopback[name='test']
+Result:
+For /services/loopback:loopback[name='test'], it evaluates to "c0"
+Operation 'merge' on existing node: /devices/device[name='c0'] (from file "loopback-template.xml", line 10)
+Processing instruction 'foreach': evaluating the node-set (from file "loopback-template.xml", line 19)
+Evaluating "loopback-intf" (from file "loopback-template.xml", line 19)
+Context node: /services/loopback:loopback[name='test']
+Result:
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101'], it evaluates to []
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102'], it evaluates to []
+Processing instruction 'foreach': next iteration: context /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101'] (from file "loopback-template.xml", line 19)
+Evaluating "/loopback-intf" (from file "loopback-template.xml", line 22)
+Context node: /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101']
+Result:
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101'], it evaluates to "1101"
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102'], it evaluates to "1102"
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1101'] (from file "loopback-template.xml", line 22)
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1101']/ip/address/primary/address (from file "loopback-template.xml", line 26)
+Evaluating "/ip-address" (from file "loopback-template.xml", line 26)
+Context node: /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101']
+Result: empty node
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1101']/ip/address/primary/mask (from file "loopback-template.xml", line 27)
+Fetching literal "255.255.255.255" (from file "loopback-template.xml", line 27)
+Setting /devices/device[name='c0']/config/ios:interface/Loopback[name='1101']/ip/address/primary/mask to "255.255.255.255"
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1102'] (from file "loopback-template.xml", line 22)
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1102']/ip/address/primary/address (from file "loopback-template.xml", line 26)
+Evaluating "/ip-address" (from file "loopback-template.xml", line 26)
+Context node: /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102']
+Result: empty node
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1102']/ip/address/primary/mask (from file "loopback-template.xml", line 27)
+Fetching literal "255.255.255.255" (from file "loopback-template.xml", line 27)
+Setting /devices/device[name='c0']/config/ios:interface/Loopback[name='1102']/ip/address/primary/mask to "255.255.255.255"
+Processing instruction 'foreach': next iteration: context /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102'] (from file "loopback-template.xml", line 19)
+Evaluating "/loopback-intf" (from file "loopback-template.xml", line 22)
+Context node: /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102']
+Result:
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101'], it evaluates to "1101"
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102'], it evaluates to "1102"
+Operation 'merge' on existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1101'] (from file "loopback-template.xml", line 22)
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1101']/ip/address/primary/address (from file "loopback-template.xml", line 26)
+Evaluating "/ip-address" (from file "loopback-template.xml", line 26)
+Context node: /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101']
+Result: empty node
+Operation 'merge' on existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1101']/ip/address/primary/mask (from file "loopback-template.xml", line 27)
+Fetching literal "255.255.255.255" (from file "loopback-template.xml", line 27)
+Setting /devices/device[name='c0']/config/ios:interface/Loopback[name='1101']/ip/address/primary/mask to "255.255.255.255"
+Operation 'merge' on existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1102'] (from file "loopback-template.xml", line 22)
+Operation 'merge' on non-existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1102']/ip/address/primary/address (from file "loopback-template.xml", line 26)
+Evaluating "/ip-address" (from file "loopback-template.xml", line 26)
+Context node: /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102']
+Result: empty node
+Operation 'merge' on existing node: /devices/device[name='c0']/config/ios:interface/Loopback[name='1102']/ip/address/primary/mask (from file "loopback-template.xml", line 27)
+Fetching literal "255.255.255.255" (from file "loopback-template.xml", line 27)
+Setting /devices/device[name='c0']/config/ios:interface/Loopback[name='1102']/ip/address/primary/mask to "255.255.255.255"
+Processing instruction 'foreach': evaluating the node-set (from file "loopback-template.xml", line 36)
+Evaluating "loopback-intf" (from file "loopback-template.xml", line 36)
+Context node: /services/loopback:loopback[name='test']
+Result:
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101'], it evaluates to []
+For /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102'], it evaluates to []
+Processing instruction 'foreach': next iteration: context /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1101'] (from file "loopback-template.xml", line 36)
+The device /devices/device[name='c0'] does not support namespace 'http://tail-f.com/ned/cisco-ios-xr' for node "interface" (from file "loopback-template.xml", line undefined)
+Skipping...
+Processing instruction 'foreach': next iteration: context /services/loopback:loopback[name='test']/loopback-intf[loopback-intf='1102'] (from file "loopback-template.xml", line 36)
+The device /devices/device[name='c0'] does not support namespace 'http://tail-f.com/ned/cisco-ios-xr' for node "interface" (from file "loopback-template.xml", line undefined)
+Skipping...
+Aborted: 'devices device c0 config interface Loopback 1101 ip address' is not configured
